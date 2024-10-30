@@ -1,8 +1,10 @@
 "use client"
-import { useState } from "react";
+import {useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { loginUser } from "@/api/api";
-import { saveToken } from "@/auth/auth";
+import {getToken, saveToken } from "@/auth/auth";
+
+
 
 const validateEmail = (email: string) => {
     return String(email)
@@ -18,6 +20,13 @@ export default function Login() {
     const [errors, setErrors] = useState<{ email?: string; password?: string; general?: string }>({});
     const [loading, setLoading] = useState(false);
     const router = useRouter();
+
+    useEffect(() => {
+        const token = getToken();
+        if (token) {
+            router.push('/');
+        }
+    }, [router]);
 
     const validate = () => {
         const newErrors: { email?: string; password?: string } = {};

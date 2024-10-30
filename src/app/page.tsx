@@ -22,7 +22,7 @@ export default function Home() {
                 const userData = await getUser(token);
                 setUser(userData);
             } catch (error) {
-                console.error('Failed to fetch user:', error);
+                removeToken();
                 router.push('/login');
             }
         };
