@@ -80,8 +80,7 @@ export default function Register() {
             setTimeout(() => {
                 router.push('/login');
             }, 1000);
-        } catch (error) {
-            console.log(error)
+        } catch (error: any) {
             setErrors({ ...errors, general: error.message || 'Registration failed. Please try again.' });
         } finally {
             setLoading(false);
