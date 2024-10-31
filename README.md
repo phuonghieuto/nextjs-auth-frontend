@@ -36,4 +36,4 @@ This application features user authentication with login and registration functi
 
 # :link: Demo
 
--   <a target="_blank" href="nextjs-auth-frontend.vercel.app"> Click Here </a> to checkout the live demo.
+-   <a target="_blank" href="https://nextjs-auth-frontend.vercel.app"> Click Here </a> to checkout the live demo.
